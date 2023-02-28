@@ -99,3 +99,13 @@ input {
     border: none;
     font-weight: bold;
 }
+
+@media  screen and (max-width: 980px) {
+    .container-1{
+        height: 30%;
+        grid-template-columns: 2fr;
+    }
+    .create-profile-upload-logo{
+        width: 100%;
+    }
+}
