@@ -45,41 +45,41 @@
                         <img id="create-profile-upload-logo" src="" style="width: 300px; height: 300px;">
                     </div>
                 </div>
-                <div class="container-2">
+                <form class="form">
                     <div class="form-container">
                         <label for="fld_fullname">Full name</label>
-                        <input id="fld_fullname" type="text" placeholder="What's Your Name">
+                        <input id="fld_fullname" name="name" type="text" placeholder="What's Your Name" required>
                     </div>
                     <div class="form-container">
                         <label for="fld_email">Email</label>
-                        <input id="fld_email" type="email" placeholder="What's Your Email" required>
+                        <input id="fld_email" name="email" type="email" placeholder="What's Your Email" required>
                     </div>
                     <div class="form-container">
                         <label for="fld_company_name">Company Name</label>
-                        <input id="fld_company_name" type="text" placeholder="What's Your Company Name">
+                        <input id="fld_company_name" name="company_name" type="text" placeholder="What's Your Company Name" required>
                     </div>
                     <div class="form-container">
                         <label for="fld_company_url">Company Website</label>
-                        <input id="fld_company_url" type="url" placeholder="What's Your Name">
+                        <input id="fld_company_url" name="company_url" type="url" placeholder="http://company.com"required>
                     </div>
                     <div class="form-container">
                         <label for="fld_industry">Industry</label>
-                        <input id="fld_industry" type="text" placeholder="What's Your Company Industry">
+                        <input id="fld_industry" name="industry" type="text" placeholder="What's Your Company Industry"required>
                     </div>
                     <div class="form-container">
                         <label for="fld_phone">Phone</label>
-                        <input id="fld_phone" type="text" placeholder="What's Your Phone">
+                        <input id="fld_phone" name="phone" type="text" placeholder="What's Your Phone" required>
                     </div>
                     <div class="form-container">
                         <label for="fld_fb_page">Facebook page</label>
-                        <input id="fld_fb_page" type="url" placeholder="https:facebook.com">
+                        <input id="fld_fb_page" name="facebook_url" type="url" placeholder="https:facebook.com" required>
                     </div>
                     <div class="form-container">
                         
                     </div>
                     <button id="create-button" class="black-button">Create Record</button>
                     <button id="delete-button" class="black-button">Delete Record</button>
-                </div>
+                </form>
                 <div class="button-container">
                 </div>
         </section>    
