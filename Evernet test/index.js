@@ -11,22 +11,38 @@ const fld_phone = document.getElementById('fld_phone')
 const facebookUrl = document.getElementById('fld_fb_page')
 
 const elementsArray = [fullName, companyName, fld_email, companyUrl, industryName, fld_phone, facebookUrl]
+const dummy = {
+    Name: 'Tom',
+    Email: 'email@gmail.com',
+    Phone: '2354723'
+}
 
-const token = 'WF4G7N2yKjDHpGVUaPoVqmxBgkCHGNxh';
-const tableId = 114016;
 
+const myToken = {
+    table_id: 'https://api.baserow.io/api/database/fields/table/144839/',
+    token: 'Token JaLVp0hOpRGOUPsb6b3f4JpKSymSEJ7C'
+}
 
-fetch(`https://api.baserow.io/api/database/rows/table/${tableId}/`, {
+const webflow = {
+    table_id: 'https://api.baserow.io/api/database/rows/table/114016/',
+    token: 'Token WF4G7N2yKjDHpGVUaPoVqmxBgkCHGNxh'
+}
+
+fetch(myToken.table_id, {
+    method: 'GET',
     headers: {
-        'Authorization': `Token ${token}`,
-        'Content-Type': 'application/json'
-    },
+        Authorization: myToken.token
+    }
+
 })
     .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(error => console.error(error));
+    .then((result) => {
+        console.log("Success:", result);
+    })
+    .catch((error) => {
+        console.error("Error:", error);
 
-
+    });
 
 
 createRecordButton.addEventListener('click', function (e) {
@@ -36,6 +52,25 @@ createRecordButton.addEventListener('click', function (e) {
     const validatedArray = elementsArray.map((element) => validateInputs(element))
 
     console.log(validatedArray)
+
+    fetch(myToken.table_id, {
+        method: 'POST',
+        headers: {
+            Authorization: myToken.token,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(dummy),
+
+    })
+        .then(response => response.json())
+        .then((result) => {
+            console.log("Success:", result);
+        })
+        .catch((error) => {
+            console.error("Error:", error);
+
+        });
+
 })
 
 function errorHandling(element, message) {
